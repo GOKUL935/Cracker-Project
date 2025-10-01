@@ -1,0 +1,10 @@
+.crackers-section {
+  background: linear-gradient(135deg, #eb4eeb, #a7a7a6); /* gradient background */
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.crackers-section h2,
+.crackers-section p {
+  color: #333; /* text color visible ah irukka */
+}
