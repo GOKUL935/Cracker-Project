@@ -9,7 +9,9 @@ import Order from "./models/Order.js"; // ✅ Order model import pannunga
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin:"https://crackize.netlify.app"
+}));
 app.use(express.json());
 app.use("/api/admin", adminRoutes);
 
