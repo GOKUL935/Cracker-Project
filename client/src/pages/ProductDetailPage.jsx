@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import products from "../data/products";
+import products from "../data/products.json"; // ✅ JSON import
 import { useCart } from "../context/CartContext";
 
 const ProductDetailPage = () => {
   const { id } = useParams(); // URL la iruka id
-  // id string ah match panna toString use pannunga
   const product = products.find((p) => p.id.toString() === id);
 
   const { addToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
 
   if (!product) {
     return <h2>Product not found ❌</h2>;
   }
-
-  const [quantity, setQuantity] = useState(1);
 
   const increaseQty = () => setQuantity(quantity + 1);
   const decreaseQty = () => {

@@ -1,0 +1,654 @@
+[
+  {
+    "id": 1,
+    "name": "10cm red Sparklers",
+    "category": "Sparklers",
+    "price": 350,
+    "mrp": 500,
+    "pieces": 10,
+    "rating": 5,
+    "image": "https://5.imimg.com/data5/SELLER/Default/2022/8/TW/KY/YX/58829788/10cm-red-10pcs-box-.jpg"
+  },
+  {
+    "id": 2,
+    "name": "12cm red Sparklers",
+    "category": "Sparklers",
+    "price": 210,
+    "mrp": 350,
+    "pieces": 5,
+    "rating": 4,
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/12/474529589/GA/PQ/RS/9413963/colour-thunder-collections-10-cm-sparklers-set-of-5-boxes-500x500.jpg"
+  },
+  {
+    "id": 3,
+    "name": "15cm red Sparklers",
+    "category": "Sparklers",
+    "price": 100,
+    "mrp": 180,
+    "pieces": 5,
+    "rating": 4,
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/9/451832867/UI/UB/LO/36275315/7-cm-green-sparkler-500x500.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "10cm gold sparklers",
+    "category": "Sparklers",
+    "price": 350,
+    "mrp": 500,
+    "pieces": 10,
+    "rating": 5,
+    "image": "https://www.standardcrackers.com/assets/uploads/product-featured-111.jpg"
+  },
+  {
+    "id": 5,
+    "name": "12cm gold Sparklers",
+    "category": "Sparklers",
+    "price": 210,
+    "mrp": 350,
+    "pieces": 5,
+    "rating": 4,
+    "image": "https://buychennaicrackers.com/wp-content/uploads/2024/07/myl-asian-41.jpg"
+  },
+  {
+    "id": 6,
+    "name": "15cm gold Sparklers",
+    "category": "Sparklers",
+    "price": 100,
+    "mrp": 180,
+    "pieces": 5,
+    "rating": 4,
+    "image": "data:image/jpeg;base64,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"
+  },
+  {
+    "id": 7,
+    "name": "10cm multi sparklers",
+    "category": "Sparklers",
+    "price": 350,
+    "mrp": 500,
+    "pieces": 10,
+    "rating": 5,
+    "image": "https://bijili.s3.ap-south-1.amazonaws.com/product/quick-order/bij_019q.jpg"
+  },
+  {
+    "id": 8,
+    "name": "12cm multi Sparklers",
+    "category": "Sparklers",
+    "price": 210,
+    "mrp": 350,
+    "pieces": 5,
+    "rating": 4,
+    "image": "https://www.sparklingcrackers.in/uploads/stocks/STK_IMG_S-ID-7119956807.webp"
+  },
+  {
+    "id": 9,
+    "name": "15cm multi Sparklers",
+    "category": "Sparklers",
+    "price": 100,
+    "mrp": 180,
+    "pieces": 5,
+    "rating": 4,
+    "image": "https://tamilnaducrackers.com/wp-content/uploads/2022/08/30cm.jpg"
+  },
+  {
+    "id": 10,
+    "name": "5 inch Ground Chakkars",
+    "category": "Ground Chakkars",
+    "price": 420,
+    "mrp": 600,
+    "pieces": 10,
+    "rating": 5,
+    "image": "https://cdn.dotpe.in/longtail/store-items/6997269/xaMi72Rg.webp"
+  },
+  {
+    "id": 11,
+    "name": "7.5 Ground Chakkars",
+    "category": "Ground Chakkars",
+    "price": 280,
+    "mrp": 400,
+    "pieces": 5,
+    "rating": 4,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPur2u3E1J0aqGYvqwWw85E9Pw_Eqvds52Hg&s"
+  },
+  {
+    "id": 12,
+    "name": "10.5 Ground Chakkars",
+    "category": "Ground Chakkars",
+    "price": 170,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://anilcracker.com/wp-content/uploads/2021/09/2-chakkar-spl.png"
+  },
+  {
+    "id": 13,
+    "name": "27 inch inch Ground Chakkars",
+    "category": "Ground Chakkars",
+    "price": 420,
+    "mrp": 600,
+    "pieces": 10,
+    "rating": 5,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyUrwPJjs8T7Sjme_ABf2EQdjIz8kn6J3uQH7cxpjYgySZV267so-Wzjm69fmG3fOPipk&usqp=CAU"
+  },
+  {
+    "id": 14,
+    "name": "54cm Ground Chakkars",
+    "category": "Ground Chakkars",
+    "price": 280,
+    "mrp": 400,
+    "pieces": 5,
+    "rating": 4,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRApSeW3a-cOp1-kYJB0C7Agrzo9bf3Muz1ug&s"
+  },
+  {
+    "id": 15,
+    "name": "70cm Ground Chakkars",
+    "category": "Ground Chakkars",
+    "price": 170,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://bijili.s3.ap-south-1.amazonaws.com/product/bij_058.jpg"
+  },
+  {
+    "id": 16,
+    "name": "3-4 inch Flowerpots",
+    "category": "Flowerpots",
+    "price": 240,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://www.crackerbazaar.in/wp-content/uploads/2021/01/DSC_0062-scaled.jpg"
+  },
+  {
+    "id": 17,
+    "name": "5-8 inch Flowerpots",
+    "category": "Flowerpots",
+    "price": 165,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/333856626/AX/JV/JT/58829788/flower-pots-super-deluxe-5-pcs-5pcs-box.jpg"
+  },
+  {
+    "id": 18,
+    "name": "10-12 inch Flowerpots",
+    "category": "Flowerpots",
+    "price": 110,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://imgcdn.iar.net.in/d992d54ae97874fee83cbb29d41bcf80044a7a395512a9c73246fe9af44c990dfddf8fba12f8c072ddec1161af02121a138355a054b5cb9acce0f61ff442a697/fit/270/270/sm/1/plain/https://assetv2.iar.net.in/trial1085.iar.net.in/11_8_2025/1ay4SSd/fp%20deluxe%20.jpg"
+  },
+  {
+    "id": 19,
+    "name": "15-20 inch Flowerpots",
+    "category": "Flowerpots",
+    "price": 240,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://buychennaicrackers.com/wp-content/uploads/2024/07/Photoroom-20240717_170620.jpg"
+  },
+  {
+    "id": 20,
+    "name": "20-25 inch Flowerpots",
+    "category": "Flowerpots",
+    "price": 165,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://oscrackers.in/wp-content/uploads/2021/08/fp-small-img-1.webp"
+  },
+  {
+    "id": 21,
+    "name": "approx.3 inch Flowerpots",
+    "category": "Flowerpots",
+    "price": 110,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd1howcZRhp5WYYlNYDu1-LG8N28lzqYxoCDIEmRnhKgLKASI0qbfkHjiXDm_vrjiM2TU&usqp=CAU"
+  },
+  {
+    "id": 22,
+    "name": "2-4 inch Rockets",
+    "category": "Rockets",
+    "price": 490,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://5.imimg.com/data5/YG/EX/MY-14394076/firework-colorful-rocket-500x500.jpg"
+  },
+  {
+    "id": 23,
+    "name": "4-6 inch Rockets",
+    "category": "Rockets",
+    "price": 320,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://m.media-amazon.com/images/I/71s-j9nrQHL._UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 24,
+    "name": "6 inch Rockets",
+    "category": "Rockets",
+    "price": 220,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAoSvp3RnXjtjLN-snXW7VhzTXS4qltpCv-w&s"
+  },
+  {
+    "id": 25,
+    "name": "7 inch Rockets",
+    "category": "Rockets",
+    "price": 490,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://m.media-amazon.com/images/I/71s-j9nrQHL._UF1000,1000_QL80_.jpg"
+  },
+  {
+    "id": 26,
+    "name": "10 inch Rockets",
+    "category": "Rockets",
+    "price": 320,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLUm8LbS4Kbyeh11nk1kH4CtDRG-T8JoKfgw&s"
+  },
+  {
+    "id": 27,
+    "name": "Hydro Atom Bomb",
+    "category": "Atom Bomb",
+    "price": 220,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/7/436598172/GU/XY/RE/31450889/hydro-bomb-500x500.jpeg"
+  },
+  {
+    "id": 28,
+    "name": "king of kong Atom Bomb",
+    "category": "Atom Bomb",
+    "price": 490,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://www.bbassets.com/media/uploads/p/xl/40116443_1-standard-crackers-atom-bombs-thunder-bomb-green.jpg"
+  },
+  {
+    "id": 29,
+    "name": "classic Atom Bomb",
+    "category": "Atom Bomb",
+    "price": 320,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://bijili.s3.ap-south-1.amazonaws.com/product/quick-order/bij_048q.jpg"
+  },
+  {
+    "id": 30,
+    "name": "honda Atom Bomb",
+    "category": "Atom Bomb",
+    "price": 220,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://royalcrackers.co.in/images/virtuemart/product/atom_bom_small_amu.jpg"
+  },
+  {
+    "id": 31,
+    "name": "555 Atom Bomb",
+    "category": "Atom Bomb",
+    "price": 490,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://crackersonline.in/wp-content/uploads/2022/07/Add-a-heading-8.png"
+  },
+  {
+    "id": 32,
+    "name": "mega Atom Bomb",
+    "category": "Atom Bomb",
+    "price": 320,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://royalcrackers.co.in/images/virtuemart/product/digital_bomb3_amu.jpg"
+  },
+  {
+    "id": 33,
+    "name": "40mm Atom Bomb",
+    "category": "Atom Bomb",
+    "price": 220,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://cpimg.tistatic.com/10011458/b/4/Saddam-Atom-Cracker..jpg"
+  },
+  {
+    "id": 34,
+    "name": "20mm Atom Bomb",
+    "category": "Atom Bomb",
+    "price": 490,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhQctoLq2NminEVLqI806iGfNUeirgb2qmrA&s"
+  },
+  {
+    "id": 35,
+    "name": "2 inch Fancy Single Shot",
+    "category": "Fancy Single Shot",
+    "price": 970,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://buychennaicrackers.com/wp-content/uploads/2024/07/Photoroom-20240717_170856.jpg"
+  },
+  {
+    "id": 36,
+    "name": "2.5 inch Fancy Single Shot",
+    "category": "Fancy Single Shot",
+    "price": 840,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://5.imimg.com/data5/ANDROID/Default/2024/9/451573774/YV/RB/DV/189417623/product-jpeg-500x500.jpg"
+  },
+  {
+    "id": 37,
+    "name": "3 inch Fancy Single Shot",
+    "category": "Fancy Single Shot",
+    "price": 80,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://fireworkssalesdepot.in/image/cache/data/product_images/437/1-600x600.jpg"
+  },
+  {
+    "id": 38,
+    "name": "3.5 Fancy Single Shot",
+    "category": "Fancy Single Shot",
+    "price": 970,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://5.imimg.com/data5/ANDROID/Default/2022/7/ZU/PD/XC/6398711/product-jpeg-500x500.jpg"
+  },
+  {
+    "id": 39,
+    "name": "4 inch Fancy Single Shot",
+    "category": "Fancy Single Shot",
+    "price": 840,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://www.crackersshope.com/wp-content/uploads/2024/08/DSCF8805_-scaled.jpg"
+  },
+  {
+    "id": 40,
+    "name": "4.5 Fancy Single Shot",
+    "category": "Fancy Single Shot",
+    "price": 80,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://bijili.s3.ap-south-1.amazonaws.com/product/bij_250a-1722341666.jpg"
+  },
+  {
+    "id": 41,
+    "name": "7'' Multi Color Shot",
+    "category": "Multi Color Shot",
+    "price": 2100,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://crackersonline.in/wp-content/uploads/2022/07/Crackersonline.in-26.png"
+  },
+  {
+    "id": 42,
+    "name": "10'' Multi Color Shot",
+    "category": "Multi Color Shot",
+    "price": 1850,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://fireworkssalesdepot.in/image/cache/data/product_images/85/1-600x600.jpg"
+  },
+  {
+    "id": 43,
+    "name": "12'' Multi Color Shot",
+    "category": "Multi Color Shot",
+    "price": 1480,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRDHd4qvl47TsHmgwFxw5XIAOSXpAKPfVo4g&s"
+  },
+  {
+    "id": 44,
+    "name": "20'' Multi Color Shot",
+    "category": "Multi Color Shot",
+    "price": 210,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://bijili.s3.ap-south-1.amazonaws.com/product/bij_153.jpg"
+  },
+  {
+    "id": 45,
+    "name": "25'' Multi Color Shot",
+    "category": "Multi Color Shot",
+    "price": 1850,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://www.crackersindia.com/wp-content/uploads/2019/01/25-SHOTS-300x300.jpg"
+  },
+  {
+    "id": 46,
+    "name": "30 Multi Color Shot",
+    "category": "Multi Color Shot",
+    "price": 1480,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/1/375503706/EV/UH/NZ/3209555/30-multi-shots.webp"
+  },
+  {
+    "id": 47,
+    "name": "40'' Multi Color Shot",
+    "category": "Multi Color Shot",
+    "price": 2100,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://images.archanfireworks.com/uploads/all/ipl-sky-shot-crackersonline.webp"
+  },
+  {
+    "id": 48,
+    "name": "50'' Multi Color Shot",
+    "category": "Multi Color Shot",
+    "price": 1850,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/4/407668566/VD/YV/ZY/98321734/184-500x500.jpeg"
+  },
+  {
+    "id": 49,
+    "name": " 100'' Color Shot",
+    "category": "Multi Color Shot",
+    "price": 1480,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://images.archanfireworks.com/uploads/all/buy-standard-fireworks-100-sky-shot.webp"
+  },
+  {
+    "id": 50,
+    "name": "120'' Multi Color Shot",
+    "category": "Multi Color Shot",
+    "price": 2100,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://amazingcrackers.in/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-03-at-6.40.54-PM-2.jpeg"
+  },
+  {
+    "id": 51,
+    "name": "240 Multi Color Shot",
+    "category": "Multi Color Shot",
+    "price": 1850,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://crackersking.com/wp-content/uploads/2021/10/240-Shot-Multicolour.jpg"
+  },
+  {
+    "id": 52,
+    "name": "matchstick Gun",
+    "category": "Gun",
+    "price": 100,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://cdn.shopclues.com/images/thumbnails/44977/640/1/GunRevolvercrackermain1475672032.jpg"
+  },
+  {
+    "id": 53,
+    "name": "roll gap Gun",
+    "category": "Gun",
+    "price": 250,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/7103hqfldqL.jpg"
+  },
+  {
+    "id": 54,
+    "name": "ring cap Gun",
+    "category": "Gun",
+    "price": 150,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://5.imimg.com/data5/SELLER/Default/2022/2/VF/SZ/YY/7113774/mitaso-small-baby-toy-pistol.jpg"
+  },
+  {
+    "id": 55,
+    "name": "sound/sparkle Gun",
+    "category": "Gun",
+    "price": 150,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://images.meesho.com/images/products/564263221/2jjky_512.webp"
+  },
+  {
+    "id": 56,
+    "name": "16 items Gift Boxes",
+    "category": "Gift Boxes",
+    "price": 4500,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://ayyappacrackers.com/wp-content/uploads/2024/10/STDGIB360_PRIZE_16_GIFTBOX.jpg_GIFTBOXES_001_Standard_fireworks_in_Chennai.jpg"
+  },
+  {
+    "id": 57,
+    "name": "22 items Gift Boxes",
+    "category": "Gift Boxes",
+    "price": 3800,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://images.archanfireworks.com/uploads/all/22-items-gift-box-crackers-premium-crackers.webp"
+  },
+  {
+    "id": 58,
+    "name": "33 items Gift Boxes",
+    "category": "Gift Boxes",
+    "price": 2100,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://www.crackersindia.com/wp-content/uploads/2019/01/33-GB-BACK-SIDE.png"
+  },
+  {
+    "id": 59,
+    "name": "40 items Gift Boxes",
+    "category": "Gift Boxes",
+    "price": 4500,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://tamilcrackers.com/wp-content/uploads/2019/10/WhatsApp-Image-2023-09-25-at-19.20.05_0a1674dc.jpg"
+  },
+  {
+    "id": 60,
+    "name": "50 items Gift Boxes",
+    "category": "Gift Boxes",
+    "price": 3800,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://5.imimg.com/data5/ANDROID/Default/2022/9/VM/VN/FX/118878731/product-jpeg.jpg"
+  },
+  {
+    "id": 61,
+    "name": "55 items Gift Boxes",
+    "category": "Gift Boxes",
+    "price": 2100,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://5.imimg.com/data5/ANDROID/Default/2022/8/TJ/OI/DG/3188893/prod-20220823-1606216812987160076842289-jpg.jpg"
+  },
+  {
+    "id": 62,
+    "name": "60 items Gift Boxes",
+    "category": "Gift Boxes",
+    "price": 2100,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/8/443224164/AF/WZ/CM/23833603/crackers-gift-box-60-items.jpeg"
+  },
+  {
+    "id": 63,
+    "name": "10 items Kids Boxes",
+    "category": "Kids Boxes",
+    "price": 1500,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScFhCD0lA2yCZXNiRXQD9k-gL8OvF9fD_liw&s"
+  },
+  {
+    "id": 64,
+    "name": "12 items Kids Boxes",
+    "category": "Kids Boxes",
+    "price": 1300,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpzR7ANSUOLegZqghQBF7RC3ARFpodPay4Sw&s"
+  },
+  {
+    "id": 65,
+    "name": "13 items Kids Boxes",
+    "category": "Kids Boxes",
+    "price": 1000,
+    "mrp": 250,
+    "pieces": 5,
+    "rating": 3,
+    "image": "https://5.imimg.com/data5/ANDROID/Default/2022/10/QD/DV/HZ/32408191/product-jpeg-500x500.jpg"
+  }
+
+]
+

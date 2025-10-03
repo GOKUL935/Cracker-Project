@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useSearch } from "../context/SearchContext";
-import products from "../data/products";
+import products from "../data/products.json"; // ✅ JSON import
 
 function ProductsPage() {
   const { addToCart } = useCart();

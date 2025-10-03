@@ -1,11 +1,10 @@
+// client/src/pages/Checkout.jsx
 import { loadStripe } from "@stripe/stripe-js";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
-// Stripe public key (publishable key)
+// ✅ Stripe public (publishable) key
 const publishableKey = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY;
-console.log("Stripe key 👉", publishableKey);
-
 const stripePromise = loadStripe(publishableKey);
 
 function Checkout() {
@@ -24,21 +23,22 @@ function Checkout() {
         body: JSON.stringify({ cartItems, totalAmount }),
       });
 
+      const data = await response.json();
+      console.log("Stripe Session Response 👉", data);
+
       if (!response.ok) {
-        throw new Error("Server error while creating session");
+        throw new Error(data.error || "Server error while creating session");
       }
 
-      const data = await response.json();
-
+      const stripe = await stripePromise;
       if (data.id) {
-        // ✅ Use Stripe redirect
-        const stripe = await stripePromise;
+        // ✅ Redirect to Stripe Checkout
         await stripe.redirectToCheckout({ sessionId: data.id });
       } else if (data.url) {
-        // fallback
+        // fallback (manual redirect)
         window.location.href = data.url;
       } else {
-        alert("❌ Checkout failed: " + (data.error || "Unknown error"));
+        alert("❌ Checkout failed: No session info received");
       }
     } catch (err) {
       console.error("❌ Stripe error:", err);
@@ -58,7 +58,7 @@ function Checkout() {
         <>
           {cartItems.map((item, index) => (
             <p key={index}>
-              {item.name} ({item.quantity}x) - ₹{item.price * item.quantity}
+              {item.name} ({item.quantity}x) – ₹{item.price * item.quantity}
             </p>
           ))}
 
