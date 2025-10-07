@@ -4,9 +4,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import Stripe from "stripe";
 import mongoose from "mongoose";
-import authRoutes from "./routes/auth.js";  
+import authRoutes from "./routes/auth.js";
 import adminRoutes from "./routes/admin.js";
-import Order from "./models/Order.js"; 
+import Order from "./models/Order.js";
+import Cracker from "./models/Cracker.js"; // ✅ Import product model
 
 dotenv.config();
 const app = express();
@@ -21,6 +22,8 @@ app.use(cors({
 }));
 
 app.use(express.json());
+
+// ✅ Admin routes
 app.use("/api/admin", adminRoutes);
 
 // ✅ MongoDB connect
@@ -37,6 +40,17 @@ console.log("✅ Using CLIENT_URL:", CLIENT_URL);
 
 // ✅ Auth routes
 app.use("/api/auth", authRoutes);
+
+// ✅ Products (Crackers) route — NEW
+app.get("/v1/products", async (req, res) => {
+  try {
+    const crackers = await Cracker.find();
+    res.status(200).json(crackers);
+  } catch (error) {
+    console.error("❌ Error fetching crackers:", error);
+    res.status(500).json({ message: "Error fetching crackers", error: error.message });
+  }
+});
 
 // ✅ Create Checkout Session
 app.post("/v1/checkout/sessions", async (req, res) => {
@@ -72,7 +86,6 @@ app.post("/v1/checkout/sessions", async (req, res) => {
       cancel_url: `${CLIENT_URL}/cancel`,
     });
 
-    // ✅ Send back both id & url
     res.json({ id: session.id, url: session.url });
   } catch (err) {
     console.error("❌ Error creating checkout session:", err);
