@@ -1,44 +1,21 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useSearch } from "../context/SearchContext";
+import products from "../data/products.json"; // ✅ Import local data file
 
 function ProductsPage() {
   const { addToCart } = useCart();
   const { searchTerm } = useSearch();
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  // ✅ Fetch products from Render backend API (MongoDB)
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        // ⚠️ Replace this link with your Render backend live URL if different
-        const res = await fetch("https://crackize-server.onrender.com/v1/products");
-        const data = await res.json();
-        setProducts(data);
-      } catch (err) {
-        console.error("❌ Error fetching products:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProducts();
-  }, []);
 
   const handleAddToCart = (product) => {
     addToCart(product);
     alert(`${product.name} added to cart ✅`);
   };
 
-  // 🔎 Filter by search term
+  // 🔎 Filter products by searchTerm (case-insensitive)
   const filteredProducts = products.filter((product) =>
-    product.name?.toLowerCase().includes(searchTerm.toLowerCase())
+    product.name.toLowerCase().includes((searchTerm || "").toLowerCase())
   );
-
-  if (loading) {
-    return <p style={{ textAlign: "center" }}>Loading products...</p>;
-  }
 
   return (
     <div
@@ -56,9 +33,9 @@ function ProductsPage() {
           No products found ❌
         </p>
       ) : (
-        filteredProducts.map((product) => (
+        filteredProducts.map((product, index) => (
           <div
-            key={product._id}
+            key={index}
             className="product-card"
             style={{
               border: "1px solid #ddd",
@@ -72,7 +49,7 @@ function ProductsPage() {
           >
             {/* 👇 Product details link */}
             <Link
-              to={`/product/${product._id}`}
+              to={`/product/${index}`}
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <img

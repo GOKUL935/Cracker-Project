@@ -1,30 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import products from "../data/products.json"; // ✅ Local file import
 
 const ProductDetailPage = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // this is the index from /product/:id
   const [product, setProduct] = useState(null);
   const [related, setRelated] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const res = await fetch(`https://crackize-server.onrender.com/v1/products`);
-        const data = await res.json();
-        const found = data.find((p) => p._id === id);
-        setProduct(found);
-        const relatedItems = data.filter(
-          (p) => p.category === found?.category && p._id !== found._id
-        );
-        setRelated(relatedItems);
-      } catch (err) {
-        console.error("Error loading product:", err);
-      }
-    };
-    fetchProduct();
+    const selected = products[id]; // ✅ get by index
+    setProduct(selected);
+
+    if (selected) {
+      const relatedItems = products.filter(
+        (p, index) => p.category === selected.category && index !== parseInt(id)
+      );
+      setRelated(relatedItems);
+    }
   }, [id]);
 
   if (!product) return <h2 style={{ textAlign: "center" }}>Loading...</h2>;
@@ -38,7 +33,7 @@ const ProductDetailPage = () => {
 
   return (
     <div style={{ padding: "20px" }}>
-      <div style={{ display: "flex", gap: "30px" }}>
+      <div style={{ display: "flex", gap: "30px", flexWrap: "wrap" }}>
         <img
           src={product.image}
           alt={product.name}
@@ -78,6 +73,7 @@ const ProductDetailPage = () => {
         </div>
       </div>
 
+      {/* ✅ Related Products Section */}
       <div style={{ marginTop: "40px" }}>
         <h3>Related Products</h3>
         <div
@@ -88,9 +84,9 @@ const ProductDetailPage = () => {
             marginTop: "20px",
           }}
         >
-          {related.map((rp) => (
+          {related.map((rp, index) => (
             <div
-              key={rp._id}
+              key={index}
               style={{
                 border: "1px solid #ddd",
                 borderRadius: "10px",
@@ -106,7 +102,7 @@ const ProductDetailPage = () => {
               <h4>{rp.name}</h4>
               <p>₹{rp.price}</p>
               <Link
-                to={`/product/${rp._id}`}
+                to={`/product/${products.indexOf(rp)}`}
                 style={{
                   display: "inline-block",
                   marginTop: "5px",
