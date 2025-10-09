@@ -9,36 +9,34 @@ function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // ✅ Load products from backend API
+  // ✅ Fetch from Render backend
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const res = await fetch("https://crackize-server.onrender.com/v1/products");
         const data = await res.json();
         setProducts(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("❌ Error fetching products:", error);
+      } catch (err) {
+        console.error("❌ Error fetching products:", err);
+      } finally {
         setLoading(false);
       }
     };
     fetchProducts();
   }, []);
 
-  // 🔍 Filter by searchTerm
-  const filteredProducts = products.filter((product) =>
-    product.name?.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   const handleAddToCart = (product) => {
     addToCart(product);
     alert(`${product.name} added to cart ✅`);
   };
 
+  // 🔎 Search filter
+  const filteredProducts = products.filter((product) =>
+    product.name?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   if (loading) {
-    return (
-      <h2 style={{ textAlign: "center", marginTop: "50px" }}>Loading products...</h2>
-    );
+    return <p style={{ textAlign: "center" }}>Loading products...</p>;
   }
 
   return (
@@ -53,7 +51,9 @@ function ProductsPage() {
       }}
     >
       {filteredProducts.length === 0 ? (
-        <p style={{ fontSize: "18px", fontWeight: "bold" }}>No products found ❌</p>
+        <p style={{ fontSize: "18px", fontWeight: "bold" }}>
+          No products found ❌
+        </p>
       ) : (
         filteredProducts.map((product) => (
           <div
@@ -82,7 +82,9 @@ function ProductsPage() {
                   marginBottom: "10px",
                 }}
               />
-              <h3 style={{ fontSize: "16px", margin: "10px 0" }}>{product.name}</h3>
+              <h3 style={{ fontSize: "16px", margin: "10px 0" }}>
+                {product.name}
+              </h3>
             </Link>
 
             <p style={{ fontWeight: "bold", marginBottom: "10px" }}>

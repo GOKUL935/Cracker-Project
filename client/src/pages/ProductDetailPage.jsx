@@ -1,38 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
-  const { addToCart } = useCart();
   const [product, setProduct] = useState(null);
-  const [quantity, setQuantity] = useState(1);
   const [related, setRelated] = useState([]);
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
 
-  // ✅ Fetch selected product from backend
   useEffect(() => {
-    fetch("https://crackize-server.onrender.com/v1/products")
-      .then((res) => res.json())
-      .then((data) => {
+    const fetchProduct = async () => {
+      try {
+        const res = await fetch(`https://crackize-server.onrender.com/v1/products`);
+        const data = await res.json();
         const found = data.find((p) => p._id === id);
         setProduct(found);
-        setRelated(data.filter((p) => p.category === found.category && p._id !== found._id));
-      })
-      .catch((err) => console.error("❌ Error fetching product details:", err));
+        const relatedItems = data.filter(
+          (p) => p.category === found?.category && p._id !== found._id
+        );
+        setRelated(relatedItems);
+      } catch (err) {
+        console.error("Error loading product:", err);
+      }
+    };
+    fetchProduct();
   }, [id]);
 
-  if (!product) {
-    return <h2 style={{ textAlign: "center", marginTop: "50px" }}>Loading product...</h2>;
-  }
+  if (!product) return <h2 style={{ textAlign: "center" }}>Loading...</h2>;
 
   const increaseQty = () => setQuantity(quantity + 1);
-  const decreaseQty = () => quantity > 1 && setQuantity(quantity - 1);
+  const decreaseQty = () => {
+    if (quantity > 1) setQuantity(quantity - 1);
+  };
 
   const totalPrice = product.price * quantity;
 
   return (
     <div style={{ padding: "20px" }}>
-      <div style={{ display: "flex", gap: "30px", flexWrap: "wrap" }}>
+      <div style={{ display: "flex", gap: "30px" }}>
         <img
           src={product.image}
           alt={product.name}
@@ -41,10 +47,17 @@ const ProductDetailPage = () => {
 
         <div>
           <h2>{product.name}</h2>
-          <p>{product.pieces} Pieces</p>
+          <p>{product.pieces || "N/A"} Pieces</p>
           <p style={{ fontSize: "20px", color: "red" }}>₹{totalPrice}</p>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "15px" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              marginBottom: "15px",
+            }}
+          >
             <button onClick={decreaseQty}>-</button>
             <span>{quantity}</span>
             <button onClick={increaseQty}>+</button>
@@ -63,26 +76,6 @@ const ProductDetailPage = () => {
             Add to Cart
           </button>
         </div>
-      </div>
-
-      <div style={{ marginTop: "40px" }}>
-        <h3>Additional Information</h3>
-        <table border="1" cellPadding="10" style={{ marginTop: "10px" }}>
-          <tbody>
-            <tr>
-              <td>Box</td>
-              <td>{product.box || "1"}</td>
-            </tr>
-            <tr>
-              <td>Market Price</td>
-              <td>₹{product.mrp || product.price * 2}</td>
-            </tr>
-            <tr>
-              <td>Discount</td>
-              <td>{product.discount || "70% - 85%"}</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
 
       <div style={{ marginTop: "40px" }}>
