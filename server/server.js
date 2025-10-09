@@ -7,56 +7,55 @@ import mongoose from "mongoose";
 import authRoutes from "./routes/auth.js";
 import adminRoutes from "./routes/admin.js";
 import Order from "./models/Order.js";
-import Cracker from "./models/Cracker.js"; // ✅ Import product model
+import Cracker from "./models/Cracker.js"; // ✅ Product model
 
 dotenv.config();
 const app = express();
 
-// ✅ CORS Setup (allow both localhost + Netlify frontend)
-app.use(cors({
-  origin: [
-    "http://localhost:3000",       // Dev
-    "https://crackize.netlify.app" // Production
-  ],
-  credentials: true,
-}));
+// ✅ CORS Setup (Netlify + Localhost allowed)
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",          // local dev
+      "https://crackzie.netlify.app",   // your live site (correct spelling)
+    ],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
-// ✅ Admin routes
+// ✅ MongoDB Connection
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("✅ MongoDB connected successfully"))
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
+
+// ✅ Stripe Init
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+// ✅ Routes
+app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
 
-// ✅ MongoDB connect
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB connected"))
-  .catch((err) => console.error("❌ MongoDB error:", err));
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-const PORT = process.env.PORT || 4000;
-
-// ✅ Client URL fallback (important for Stripe success/cancel URL)
-const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:3000";
-console.log("✅ Using CLIENT_URL:", CLIENT_URL);
-
-// ✅ Auth routes
-app.use("/api/auth", authRoutes);
-
-// ✅ Products (Crackers) route — NEW
+// ✅ Products (Crackers) Route
 app.get("/v1/products", async (req, res) => {
   try {
     const crackers = await Cracker.find();
     res.status(200).json(crackers);
   } catch (error) {
     console.error("❌ Error fetching crackers:", error);
-    res.status(500).json({ message: "Error fetching crackers", error: error.message });
+    res
+      .status(500)
+      .json({ message: "Error fetching crackers", error: error.message });
   }
 });
 
-// ✅ Create Checkout Session
+// ✅ Stripe Checkout Session
 app.post("/v1/checkout/sessions", async (req, res) => {
   try {
     const { cartItems } = req.body;
-    console.log("📦 Cart Items Received:", cartItems);
+    console.log("📦 Cart Items:", cartItems);
 
     if (!cartItems || cartItems.length === 0) {
       return res.status(400).json({ error: "Cart is empty" });
@@ -69,12 +68,10 @@ app.post("/v1/checkout/sessions", async (req, res) => {
           name: item.name,
           images: item.image ? [item.image] : [],
         },
-        unit_amount: Math.round(item.price * 100), // Stripe expects amount in paisa
+        unit_amount: Math.round(item.price * 100), // Stripe expects in paisa
       },
       quantity: item.quantity || 1,
     }));
-
-    console.log("✅ Line Items:", line_items);
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -82,8 +79,8 @@ app.post("/v1/checkout/sessions", async (req, res) => {
       line_items,
       phone_number_collection: { enabled: true },
       shipping_address_collection: { allowed_countries: ["IN"] },
-      success_url: `${CLIENT_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${CLIENT_URL}/cancel`,
+      success_url: `${process.env.CLIENT_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.CLIENT_URL}/cancel`,
     });
 
     res.json({ id: session.id, url: session.url });
@@ -93,7 +90,7 @@ app.post("/v1/checkout/sessions", async (req, res) => {
   }
 });
 
-// ✅ Retrieve session & Save Order
+// ✅ Retrieve Stripe Session & Save Order
 app.get("/v1/checkout/session/:id", async (req, res) => {
   try {
     const session = await stripe.checkout.sessions.retrieve(req.params.id, {
@@ -135,6 +132,8 @@ app.get("/v1/checkout/session/:id", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
+// ✅ Render Port Binding Fix
+const PORT = process.env.PORT || 4000; // ⚠️ must use process.env.PORT
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`✅ Server running on port ${PORT}`);
 });
