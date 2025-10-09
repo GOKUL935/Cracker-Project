@@ -57,7 +57,7 @@ const Home = () => {
       <div
         style={{
           backgroundImage:
-            "url('https://freestock.ai/wp-content/uploads/edd/2024/10/Vector-Illustration-of-New-Year-Fireworks-Decoration-Against-a-Blue-Background-Ideal-for-Celebrations-and-Events-Large.jpeg')",
+            "url('/images/fireworks-bg.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "70vh",
