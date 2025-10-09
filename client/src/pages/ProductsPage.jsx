@@ -9,10 +9,11 @@ function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // ✅ Fetch from Render backend
+  // ✅ Fetch products from Render backend API (MongoDB)
   useEffect(() => {
     const fetchProducts = async () => {
       try {
+        // ⚠️ Replace this link with your Render backend live URL if different
         const res = await fetch("https://crackize-server.onrender.com/v1/products");
         const data = await res.json();
         setProducts(data);
@@ -30,7 +31,7 @@ function ProductsPage() {
     alert(`${product.name} added to cart ✅`);
   };
 
-  // 🔎 Search filter
+  // 🔎 Filter by search term
   const filteredProducts = products.filter((product) =>
     product.name?.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -66,8 +67,10 @@ function ProductsPage() {
               width: "220px",
               textAlign: "center",
               boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+              background: "#fff",
             }}
           >
+            {/* 👇 Product details link */}
             <Link
               to={`/product/${product._id}`}
               style={{ textDecoration: "none", color: "inherit" }}
@@ -91,6 +94,7 @@ function ProductsPage() {
               ₹{product.price}
             </p>
 
+            {/* 👇 Add to Cart button */}
             <button
               onClick={() => handleAddToCart(product)}
               style={{
