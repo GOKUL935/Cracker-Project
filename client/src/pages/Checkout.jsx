@@ -17,7 +17,7 @@ function Checkout() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:4000/v1/checkout/sessions", {
+      const response = await fetch("srv-d3jb5svdiees73cdgecg/v1/checkout/sessions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ cartItems, totalAmount }),
