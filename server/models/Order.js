@@ -20,7 +20,7 @@ const orderSchema = new mongoose.Schema({
       price: Number,
     }
   ],
-  totalAmount: Number,       // ✅ field used for revenue calc
+  totalAmount: Number,       
   stripeSessionId: String,
   createdAt: { type: Date, default: Date.now }
 });

@@ -9,7 +9,7 @@ function Success() {
   useEffect(() => {
     const sessionId = searchParams.get("session_id");
     if (sessionId) {
-      fetch(`http://localhost:4000/v1/checkout/session/${sessionId}`)
+      fetch(`https://crackzie-backend.onrender.com/v1/checkout/session/${sessionId}`)
         .then((res) => res.json())
         .then((data) => {
           setSession(data);

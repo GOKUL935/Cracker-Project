@@ -16,7 +16,7 @@ function Auth() {
     try {
       if (isLogin) {
         // 🔹 LOGIN
-        const res = await fetch("http://localhost:4000/api/auth/login", {
+        const res = await fetch("https://crackzie-backend.onrender.com/api/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -27,14 +27,14 @@ function Auth() {
         const data = await res.json();
         if (res.ok) {
           alert("Login Successfully");
-          login(data.token, data.user); // ✅ save both token & user
+          login(data.token, data.user);
           navigate("/choose-role");
         } else {
           alert(data.error || "Login failed");
         }
       } else {
         // 🔹 SIGNUP
-        const res = await fetch("http://localhost:4000/api/auth/signup", {
+        const res = await fetch("https://crackzie-backend.onrender.com/api/auth/signup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(form),

@@ -9,7 +9,7 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("srv-d3jb5svdiees73cdgecg/api/auth/register", {
+    const res = await fetch("https://crackzie-backend.onrender.com/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
